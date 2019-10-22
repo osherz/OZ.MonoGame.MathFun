@@ -1,6 +1,15 @@
 .vs/
+OZ.MonoGame.MathFun/content/bin/
+OZ.MonoGame.MathFun/content/obj/
+
 OZ.MonoGame.MathFun.Android/bin/
 OZ.MonoGame.MathFun.Android/obj/
+OZ.MonoGame.MathFun.Android/content/bin/
+OZ.MonoGame.MathFun.Android/content/obj/
+
+
 OZ.MonoGame.MathFun.Windows/bin/
 OZ.MonoGame.MathFun.Windows/obj/
+OZ.MonoGame.MathFun.Windows/content/bin/
+OZ.MonoGame.MathFun.Windows/content/obj/
 OZ.MonoGame.MathFun.Windows/icon.ico
