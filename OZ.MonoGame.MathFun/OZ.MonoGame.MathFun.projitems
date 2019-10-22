@@ -15,7 +15,6 @@
     <None Include="$(MSBuildThisFileDirectory)Content\Content.mgcb" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)GameEngine\Board.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameEngine\Cards\Card.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameEngine\Cards\ICard.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameEngine\Cards\ICardBuilder.cs" />
@@ -31,7 +30,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\CardDraw.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\CardsBuilder.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\CardsCollection.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\CardsDraw.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\DrawScoreBars.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\Effects\CardsMatchEffect.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\Effects\Direction.cs" />

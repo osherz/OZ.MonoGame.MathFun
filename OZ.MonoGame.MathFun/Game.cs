@@ -165,20 +165,6 @@ namespace OZ.MonoGame.MathFun
             // Drop the render target
             graphicsDevice.SetRenderTarget(null);
 
-            /*
-                        Color[] data = new Color[width * height];
-                        reg.GetData(data);
-
-                        for (int i = 0; i < data.Length; i++)
-                        {
-                            data[i] *= 1.5f;
-                        }
-
-                        Texture2D hovered = new Texture2D(GraphicsDevice, reg.Width, reg.Height);
-                        hovered.SetData(data);
-            */
-
-
             UIApearance.TextBoxHovered = UIApearance.TextBoxPressed = glowTextBox;
         }
 

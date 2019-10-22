@@ -20,7 +20,6 @@ namespace OZ.MonoGame.MathFun.GameObjects.UI
             TextRectangle = new Rectangle(168, 12, 218, 69);
             RectangleOfContentDrawing = new Rectangle(100, 155, 350, 475);
             RectangleOfContentAfterResizeing = false;
-            //Size = new Vector2(400, 400);
             BkgColor = Color.White;
             BlackTextureWhenNotEnabled = false;
         }

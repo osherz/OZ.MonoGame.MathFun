@@ -29,7 +29,6 @@ namespace OZ.MonoGame.MathFun.Games
 
         DrawScoreBars _drawScoreBars;
         Engine<CardDraw> _gameEngine;
-        //CardsDraw _cardsDraw;
         CardsCollection _cardsCollection;
         WinnerMessage _winnerMessage;
 
@@ -76,14 +75,6 @@ namespace OZ.MonoGame.MathFun.Games
             _cardsBuilder.Engine = _gameEngine;
             _cardsBuilder.CardsCollection = _cardsCollection;
 
-            //_cardsDraw = new CardsDraw(_gameEngine,
-            //                          graphics.PreferredBackBufferWidth,
-            //                          (int)(graphics.PreferredBackBufferHeight * BOARD_PART_OF_WINDOW),
-            //                          new Vector2(10, graphics.PreferredBackBufferHeight - graphics.PreferredBackBufferHeight * BOARD_PART_OF_WINDOW),
-            //                          margin)
-            //{
-            //    Parent = Parent
-            //};
 
             _drawScoreBars = new DrawScoreBars(Parent)
             {
@@ -139,9 +130,6 @@ namespace OZ.MonoGame.MathFun.Games
 
             _gameEngine.InitBoard(rows, columns);
 
-            //_cardsDraw.Initialize();
-            //_cardsDraw.LoadContent(Parent.Content);
-
             CalculateBoardSize();
 
             _winnerMessage.Initialize();
@@ -186,9 +174,6 @@ namespace OZ.MonoGame.MathFun.Games
 
         public void LoadContent(ContentManager content)
         {
-
-            //_cardsDraw.CardText = content.Load<SpriteFont>(@"fonts/cardTextFont");
-            //_cardsDraw.LoadContent(content);
             _cardsCollection.LoadContent(Parent.Content);
 
             _winnerMessage.Font = ScoreBar.Font = content.Load<SpriteFont>("fonts/playerFont");
@@ -224,7 +209,6 @@ namespace OZ.MonoGame.MathFun.Games
 
         public void UnloadContent(ContentManager content)
         {
-            //_cardsDraw.UnloadContent(content);
             _cardsCollection.UnloadContent(content);
             _drawScoreBars.UnloadContent(content);
             _winnerMessage.UnloadContent(content);
@@ -334,31 +318,6 @@ namespace OZ.MonoGame.MathFun.Games
             isPressing = Mouse.GetState().LeftButton == ButtonState.Pressed;
 #endif
 
-        }
-
-        private void WhetherCardPressedChecking(GameTime gameTime)
-        {
-            Vector2? positionInput = Vector2.One * -1;
-            GetInputPosition(out positionInput, out bool isPressing);
-
-            if (!_isMouseAlreadyPressed && isPressing && !_checkingMatchProccess)
-            {
-
-                Point? cardCursorPoint = null;
-                if (positionInput.HasValue)
-                {
-                   // cardCursorPoint = _cardsCollection.CardCursorPoints(positionInput.Value);
-                }
-                else
-                {
-                    cardCursorPoint = null;
-                }
-
-                if (cardCursorPoint.HasValue)
-                {
-                    _gameEngine.ChooseCard(cardCursorPoint.Value);
-                }
-            }
         }
         private void UpdatePlayers(GameTime gameTime)
         {
