@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>C:/Users/osher/Documents/Projects/Games/monoGame/OZ.MonoGame.MathFun/OZ.MonoGame.MathFun/Content/sound/pressed.mp3</SourceFile>
+  <SourceTime>2019-08-11T22:13:19.4453134+03:00</SourceTime>
+  <DestFile>C:/Users/osher/Documents/Projects/Games/monoGame/OZ.MonoGame.MathFun/OZ.MonoGame.MathFun/Content/bin/Windows/sound/pressed.xnb</DestFile>
+  <DestTime>2019-08-27T23:44:12.1612486+03:00</DestTime>
+  <Importer>Mp3Importer</Importer>
+  <ImporterTime>2018-12-08T18:35:54+02:00</ImporterTime>
+  <Processor>SoundEffectProcessor</Processor>
+  <ProcessorTime>2018-12-08T18:35:54+02:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

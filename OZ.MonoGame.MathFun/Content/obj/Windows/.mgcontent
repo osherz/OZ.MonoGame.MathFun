@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/osher/Documents/Projects/Games/monoGame/OZ.MonoGame.MathFun/OZ.MonoGame.MathFun/Content/background/boardBkgWithShadow.png</File>
+    <File>C:/Users/osher/Documents/Projects/Games/monoGame/OZ.MonoGame.MathFun/OZ.MonoGame.MathFun/Content/background/slice_Windows_04.png</File>
+    <File>C:/Users/osher/Documents/Projects/Games/monoGame/OZ.MonoGame.MathFun/OZ.MonoGame.MathFun/Content/fonts/cardTextFont.spritefont</File>
+    <File>C:/Users/osher/Documents/Projects/Games/monoGame/OZ.MonoGame.MathFun/OZ.MonoGame.MathFun/Content/fonts/playerFont.spritefont</File>
+    <File>C:/Users/osher/Documents/Projects/Games/monoGame/OZ.MonoGame.MathFun/OZ.MonoGame.MathFun/Content/sound/bubbles.mp3</File>
+    <File>C:/Users/osher/Documents/Projects/Games/monoGame/OZ.MonoGame.MathFun/OZ.MonoGame.MathFun/Content/sound/pressed.mp3</File>
+    <File>C:/Users/osher/Documents/Projects/Games/monoGame/OZ.MonoGame.MathFun/OZ.MonoGame.MathFun/Content/sprites/leftPlayer.png</File>
+    <File>C:/Users/osher/Documents/Projects/Games/monoGame/OZ.MonoGame.MathFun/OZ.MonoGame.MathFun/Content/sprites/leftPlayerGlow.png</File>
+    <File>C:/Users/osher/Documents/Projects/Games/monoGame/OZ.MonoGame.MathFun/OZ.MonoGame.MathFun/Content/sprites/slice_Button_68.png</File>
+    <File>C:/Users/osher/Documents/Projects/Games/monoGame/OZ.MonoGame.MathFun/OZ.MonoGame.MathFun/Content/sprites/slice_Button_93.png</File>
+    <File>C:/Users/osher/Documents/Projects/Games/monoGame/OZ.MonoGame.MathFun/OZ.MonoGame.MathFun/Content/sprites/slice_Button_94.png</File>
+    <File>C:/Users/osher/Documents/Projects/Games/monoGame/OZ.MonoGame.MathFun/OZ.MonoGame.MathFun/Content/sprites/winnerMessage.png</File>
+    <File>C:/Users/osher/Documents/Projects/Games/monoGame/OZ.MonoGame.MathFun/OZ.MonoGame.MathFun/Content/spritesEffect/star.png</File>
+    <File>C:/Users/osher/Documents/Projects/Games/monoGame/OZ.MonoGame.MathFun/OZ.MonoGame.MathFun/Content/UI/sprites/hoverBtn.png</File>
+    <File>C:/Users/osher/Documents/Projects/Games/monoGame/OZ.MonoGame.MathFun/OZ.MonoGame.MathFun/Content/UI/sprites/pressedBtn.png</File>
+    <File>C:/Users/osher/Documents/Projects/Games/monoGame/OZ.MonoGame.MathFun/OZ.MonoGame.MathFun/Content/UI/sprites/slice_Button_23.png</File>
+    <File>C:/Users/osher/Documents/Projects/Games/monoGame/OZ.MonoGame.MathFun/OZ.MonoGame.MathFun/Content/UI/sprites/TextBoxReg.png</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File>background/menuBkg.png</File>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File>sprites/card.png</File>
+    <File>sprites/cardHover.png</File>
+    <File>sprites/cardPressed.png</File>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File>UI/sprites/regBtn.png</File>
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>

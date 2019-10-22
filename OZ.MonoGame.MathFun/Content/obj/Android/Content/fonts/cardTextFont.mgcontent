@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>C:/Users/osher/Documents/Projects/Games/monoGame/OZ.MonoGame.MathFun/OZ.MonoGame.MathFun/Content/fonts/cardTextFont.spritefont</SourceFile>
+  <SourceTime>2019-08-11T14:38:42.0385297+03:00</SourceTime>
+  <DestFile>C:/Users/osher/Documents/Projects/Games/monoGame/OZ.MonoGame.MathFun/OZ.MonoGame.MathFun/Content/bin/Android/Content/fonts/cardTextFont.xnb</DestFile>
+  <DestTime>2019-08-27T21:12:51.8736442+03:00</DestTime>
+  <Importer>FontDescriptionImporter</Importer>
+  <ImporterTime>2018-12-08T18:35:54+02:00</ImporterTime>
+  <Processor>FontDescriptionProcessor</Processor>
+  <ProcessorTime>2018-12-08T18:35:54+02:00</ProcessorTime>
+  <Parameters>
+    <Key>PremultiplyAlpha</Key>
+    <Value>True</Value>
+  </Parameters>
+  <Parameters>
+    <Key>TextureFormat</Key>
+    <Value>Compressed</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

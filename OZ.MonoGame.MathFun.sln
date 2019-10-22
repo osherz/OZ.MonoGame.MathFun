@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "OZ.MonoGame.MathFun", "OZ.MonoGame.MathFun\OZ.MonoGame.MathFun.shproj", "{A0CDBD0E-3A41-42B7-9425-A838BC2C7383}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OZ.MonoGame.MathFun.Windows", "OZ.MonoGame.MathFun.Windows\OZ.MonoGame.MathFun.Windows.csproj", "{7F073FA2-3BE7-4BDA-AED5-BD333A936BF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OZ.MonoGame.MathFun.Android", "OZ.MonoGame.MathFun.Android\OZ.MonoGame.MathFun.Android.csproj", "{A1E2AA8D-B2BB-4637-88FC-A63E89EA6431}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "OZ.MonoGame", "..\OZ.MonoGame\OZ.MonoGame.shproj", "{C616B893-3EE5-4840-B471-5F07677DE878}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		OZ.MonoGame.MathFun\OZ.MonoGame.MathFun.projitems*{7f073fa2-3be7-4bda-aed5-bd333a936bf4}*SharedItemsImports = 4
+		..\OZ.MonoGame\OZ.MonoGame.projitems*{7f073fa2-3be7-4bda-aed5-bd333a936bf4}*SharedItemsImports = 4
+		OZ.MonoGame.MathFun\OZ.MonoGame.MathFun.projitems*{a0cdbd0e-3a41-42b7-9425-a838bc2c7383}*SharedItemsImports = 13
+		OZ.MonoGame.MathFun\OZ.MonoGame.MathFun.projitems*{a1e2aa8d-b2bb-4637-88fc-a63e89ea6431}*SharedItemsImports = 4
+		..\OZ.MonoGame\OZ.MonoGame.projitems*{a1e2aa8d-b2bb-4637-88fc-a63e89ea6431}*SharedItemsImports = 4
+		..\OZ.MonoGame\OZ.MonoGame.projitems*{c616b893-3ee5-4840-b471-5f07677de878}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7F073FA2-3BE7-4BDA-AED5-BD333A936BF4}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{7F073FA2-3BE7-4BDA-AED5-BD333A936BF4}.Debug|Any CPU.Build.0 = Debug|x86
+		{7F073FA2-3BE7-4BDA-AED5-BD333A936BF4}.Debug|x86.ActiveCfg = Debug|x86
+		{7F073FA2-3BE7-4BDA-AED5-BD333A936BF4}.Debug|x86.Build.0 = Debug|x86
+		{7F073FA2-3BE7-4BDA-AED5-BD333A936BF4}.Release|Any CPU.ActiveCfg = Release|x86
+		{7F073FA2-3BE7-4BDA-AED5-BD333A936BF4}.Release|x86.ActiveCfg = Release|x86
+		{7F073FA2-3BE7-4BDA-AED5-BD333A936BF4}.Release|x86.Build.0 = Release|x86
+		{A1E2AA8D-B2BB-4637-88FC-A63E89EA6431}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1E2AA8D-B2BB-4637-88FC-A63E89EA6431}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1E2AA8D-B2BB-4637-88FC-A63E89EA6431}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A1E2AA8D-B2BB-4637-88FC-A63E89EA6431}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A1E2AA8D-B2BB-4637-88FC-A63E89EA6431}.Debug|x86.Build.0 = Debug|Any CPU
+		{A1E2AA8D-B2BB-4637-88FC-A63E89EA6431}.Debug|x86.Deploy.0 = Debug|Any CPU
+		{A1E2AA8D-B2BB-4637-88FC-A63E89EA6431}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1E2AA8D-B2BB-4637-88FC-A63E89EA6431}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1E2AA8D-B2BB-4637-88FC-A63E89EA6431}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A1E2AA8D-B2BB-4637-88FC-A63E89EA6431}.Release|x86.ActiveCfg = Release|Any CPU
+		{A1E2AA8D-B2BB-4637-88FC-A63E89EA6431}.Release|x86.Build.0 = Release|Any CPU
+		{A1E2AA8D-B2BB-4637-88FC-A63E89EA6431}.Release|x86.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B2110CF0-7373-40DA-94E4-616161350388}
+	EndGlobalSection
+EndGlobal

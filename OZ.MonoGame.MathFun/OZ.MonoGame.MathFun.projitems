@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>21bf4391-70cc-42ea-b072-4b00a8bd5854</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>OZ.MonoGame.MathFun</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <MonoGameContentReference Include="$(MSBuildThisFileDirectory)Content\Content.mgcb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Content\Content.mgcb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)GameEngine\Board.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameEngine\Cards\Card.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameEngine\Cards\ICard.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameEngine\Cards\ICardBuilder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameEngine\Cards\IMathCard.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameEngine\Cards\MathCard.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameEngine\Cards\MathCardBuilder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameEngine\Cards\NumCard.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameEngine\Cards\Operations.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameEngine\Engine.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameEngine\ICards.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameEngine\ICardsBuilder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameEngine\Player.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\CardDraw.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\CardsBuilder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\CardsCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\CardsDraw.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\DrawScoreBars.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\Effects\CardsMatchEffect.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\Effects\Direction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\Effects\RemoveMenuAnimate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\Effects\ReplaceMenus.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\MathCardDraw.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\NumCardDraw.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\ScoreBar.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\ScoreLabel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\UI\GameMenu.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\UI\GameTextBox.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\UI\LevelsMenu.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\UI\MainMenu.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\UI\MenuButton.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\UI\PlayersNameMenu.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\UI\UIApearance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\WinnerMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Games\MemoryGameControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game.cs" />
+  </ItemGroup>
+</Project>
