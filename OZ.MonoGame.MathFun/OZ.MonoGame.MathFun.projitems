@@ -45,7 +45,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\UI\MainMenu.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\UI\MenuButton.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\UI\PlayersNameMenu.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\UI\UIApearance.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\WinnerMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Games\MemoryGameControl.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Game.cs" />

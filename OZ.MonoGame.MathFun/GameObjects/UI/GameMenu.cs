@@ -14,6 +14,7 @@ namespace OZ.MonoGame.MathFun.GameObjects.UI
     public class GameMenu : Menu, ILocation
     {
 
+        public ControlApearance ButtonsApearance { get; internal set; }
 
         public GameMenu(GamePrototype gameParent) : base(gameParent)
         {
@@ -25,8 +26,6 @@ namespace OZ.MonoGame.MathFun.GameObjects.UI
 
         public override void LoadContent(ContentManager content)
         {
-            Font = UIApearance.Font;
-            RegTexture = UIApearance.MenuBkg;
             base.LoadContent(content);          
         }
 

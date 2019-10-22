@@ -16,6 +16,10 @@ namespace OZ.MonoGame.MathFun.GameObjects
     public sealed class CardsCollection : Panel, ICards<CardDraw>
     {
 
+        #region Fields
+        private ControlApearance _cardApearance;
+        #endregion Fields
+
         #region ICard Implementation
         public CardDraw this[Point position]
         {
@@ -43,6 +47,7 @@ namespace OZ.MonoGame.MathFun.GameObjects
         public void InsertCard(CardDraw card, int row, int column)
         {
             Controls.Insert(GetIndex(row, column), card);
+            card.ControlApearance = _cardApearance;
             card.Position = new Point(row, column);
             RegisterEventsToCard(card);
             RemainCards++;
@@ -98,6 +103,7 @@ namespace OZ.MonoGame.MathFun.GameObjects
             IsEnabled = false;
             IsVisible = false;
             RectangleOfContentAfterResizeing = false;
+            _cardApearance = new ControlApearance();
 
         }
 
@@ -195,12 +201,12 @@ namespace OZ.MonoGame.MathFun.GameObjects
         public override void LoadContent(ContentManager content)
         {
 
-            UIApearance.CardReg = content.Load<Texture2D>("sprites/card");
-            UIApearance.HoverCard = content.Load<Texture2D>("sprites/cardHover");
-            UIApearance.CardPressed = content.Load<Texture2D>("sprites/cardPressed");
-            UIApearance.CardTextFont = content.Load<SpriteFont>(@"fonts/cardTextFont");
-            UIApearance.CardHoverEffect = content.Load<SoundEffect>("sound/bubbles");
-            UIApearance.CardPressedEffect = content.Load<SoundEffect>("sound/pressed");
+            _cardApearance.Reg = content.Load<Texture2D>("sprites/card");
+            _cardApearance.MouseHover = content.Load<Texture2D>("sprites/cardHover");
+            _cardApearance.MouseDown = content.Load<Texture2D>("sprites/cardPressed");
+            _cardApearance.Font = content.Load<SpriteFont>(@"fonts/cardTextFont");
+            _cardApearance.MouseHoverAudio = content.Load<SoundEffect>("sound/bubbles");
+            _cardApearance.MouseDownAudio = content.Load<SoundEffect>("sound/pressed");
 
             RegTexture = content.Load<Texture2D>("background/boardBkgWithShadow");
 

@@ -40,6 +40,7 @@ namespace OZ.MonoGame.MathFun.GameObjects.UI
         #region BUTTONS
         private MenuButton _startGameBtn;
         private MenuButton _exitBtn;
+
         #endregion BUTTONS
 
         public MainMenu(GamePrototype gameParent) : base(gameParent)
@@ -59,14 +60,16 @@ namespace OZ.MonoGame.MathFun.GameObjects.UI
             {
                 Text = "Memory Game",
                 IsEnabled = true,
-                GameParent = GameParent
+                GameParent = GameParent,
+                ControlApearance = ButtonsApearance
             };
 
             _exitBtn = new MenuButton(GameParent)
             {
                 Text = "Exit",
                 IsEnabled = true,
-                GameParent = GameParent
+                GameParent = GameParent,
+                ControlApearance = ButtonsApearance
             };
 
             AddRange(_startGameBtn, _exitBtn);

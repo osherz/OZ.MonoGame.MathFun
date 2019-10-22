@@ -19,10 +19,6 @@ namespace OZ.MonoGame.MathFun.GameObjects.UI
 
         public override void LoadContent(ContentManager content)
         {
-            RegTexture = UIApearance.BtnReg;
-            HoverTexture = UIApearance.BtnHovered;
-            PressedTexture = UIApearance.BtnPressed;
-            Font = UIApearance.Font;
             base.LoadContent(content);
         }
 

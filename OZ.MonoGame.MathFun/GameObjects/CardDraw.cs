@@ -102,14 +102,6 @@ namespace OZ.MonoGame.MathFun.GameObjects
         public override void LoadContent(ContentManager content)
         {
             base.LoadContent(content);
-            RegTexture = UIApearance.CardReg;
-            HoverTexture = UIApearance.HoverCard;
-            PressedTexture = UIApearance.CardPressed;
-
-            Font = UIApearance.CardTextFont;
-
-            AudioInHovered = UIApearance.CardHoverEffect;
-            AudioInPressed = UIApearance.CardPressedEffect;
         }
 
         public override void Update(GameTime gameTime)

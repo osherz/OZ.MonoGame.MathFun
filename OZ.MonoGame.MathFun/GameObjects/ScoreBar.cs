@@ -47,8 +47,6 @@ namespace OZ.MonoGame.MathFun.GameObjects
             set => base.GameParent = value;
         }
 
-        public static SpriteFont Font { get; set; }
-
         private bool _isMyTurn;
         public bool IsMyTurn
         {
@@ -78,6 +76,9 @@ namespace OZ.MonoGame.MathFun.GameObjects
             }
         }
 
+        public static Texture2D Reg { get; internal set; }
+        public static Texture2D Glow { get; internal set; }
+
 
         #region Events
         public event EventHandler TurnChanged;
@@ -86,7 +87,7 @@ namespace OZ.MonoGame.MathFun.GameObjects
         #region Raise Events Methods
         protected virtual void OnTurnChanged()
         {
-            RegTexture = IsMyTurn ? UI.UIApearance.GlowScoreBar : UI.UIApearance.ScoreBar;
+            RegTexture = IsMyTurn ? ScoreBar.Glow : ScoreBar.Reg;
             TurnChanged?.Invoke(this, EventArgs.Empty);
         }
 
@@ -131,9 +132,9 @@ namespace OZ.MonoGame.MathFun.GameObjects
 
         public override void LoadContent(ContentManager content)
         {
-            RegTexture = UI.UIApearance.ScoreBar;
-            _playerNameLabel.Font = Font;
-            _scoreLabel.Font = Font;
+            RegTexture = ScoreBar.Reg;
+            _playerNameLabel.ControlApearance = ControlApearance;
+            _scoreLabel.ControlApearance = ControlApearance;
             base.LoadContent(content);
         }
 

@@ -31,6 +31,10 @@ namespace OZ.MonoGame.MathFun
         LevelsMenu _chooseLevel;
         PlayersNameMenu _playersNameMenu;
 
+        ControlApearance _buttonApearance;
+        ControlApearance _textBoxApearance;
+        ControlApearance _menuApearance;
+
         Stack<GameMenu> _menuesStack;
 
         public SpriteFont Font { get; private set; }
@@ -65,23 +69,36 @@ namespace OZ.MonoGame.MathFun
             _memoryGameControl = new MemoryGameControl(this, Graphics);
             _menuesStack = new Stack<GameMenu>();
 
+            _buttonApearance = new ControlApearance();
+            _textBoxApearance = new ControlApearance();
+            _menuApearance = new ControlApearance();
+
             InitMenues();
         }
 
         private void InitMenues()
         {
-            _mainMenu = new MainMenu(this);
+            _mainMenu = new MainMenu(this)
+            {
+                ControlApearance = _menuApearance,
+                ButtonsApearance = _buttonApearance
+            };
 
             _chooseLevel = new LevelsMenu(this, 3)
             {
                 IsEnabled = false,
-                IsVisible = false
+                IsVisible = false,
+                ControlApearance = _menuApearance,
+                ButtonsApearance = _buttonApearance
             };
 
             _playersNameMenu = new PlayersNameMenu(this, 2)
             {
                 IsEnabled = false,
-                IsVisible = false
+                IsVisible = false,
+                ControlApearance = _menuApearance,
+                ButtonsApearance = _buttonApearance,
+                TextBoxApearance = _textBoxApearance
             };
 
             Controls.AddRange(new GameMenu[] { _mainMenu, _chooseLevel, _playersNameMenu });
@@ -121,51 +138,25 @@ namespace OZ.MonoGame.MathFun
 
         private void LoadUIThings()
         {
-            UIApearance.BtnReg = Content.Load<Texture2D>("UI/sprites/regBtn");
-            UIApearance.BtnHovered = Content.Load<Texture2D>("UI/sprites/hoverBtn");
-            UIApearance.BtnPressed = Content.Load<Texture2D>("UI/sprites/pressedBtn");
+            _buttonApearance.Reg = Content.Load<Texture2D>("UI/sprites/regBtn");
+            _buttonApearance.MouseHover = Content.Load<Texture2D>("UI/sprites/hoverBtn");
+            _buttonApearance.MouseDown = Content.Load<Texture2D>("UI/sprites/pressedBtn");
+            _buttonApearance.NotEnable = _buttonApearance.Reg.DarkingTexture(this);
+            _buttonApearance.Font = Font = Content.Load<SpriteFont>(@"fonts/cardTextFont");
+
 
             LoadTextBoxTextures();
 
-            UIApearance.MenuBkg = Content.Load<Texture2D>("background/menuBkg");
-            UIApearance.Font = Font = Content.Load<SpriteFont>(@"fonts/cardTextFont");
+            _menuApearance.Reg = Content.Load<Texture2D>("background/menuBkg");
+            _menuApearance.Font = Font = Content.Load<SpriteFont>(@"fonts/cardTextFont");
         }
 
         private void LoadTextBoxTextures()
         {
-            Texture2D reg = UIApearance.TextBoxReg = Content.Load<Texture2D>("UI/sprites/TextBoxReg");
-            int width = reg.Width;
-            int height = reg.Height;
-
-            var graphicsDevice = Graphics.GraphicsDevice;
-            RenderTarget2D glowTextBox = new RenderTarget2D(
-                graphicsDevice,
-                graphicsDevice.PresentationParameters.BackBufferWidth,
-                graphicsDevice.PresentationParameters.BackBufferHeight,
-                false,
-                graphicsDevice.PresentationParameters.BackBufferFormat,
-                DepthFormat.Depth24);
-
-            graphicsDevice.SetRenderTarget(glowTextBox);
-            graphicsDevice.DepthStencilState = new DepthStencilState() { DepthBufferEnable = true };
-
-            // Draw the scene
-            var spriteBatch = SpriteBatch;
-            graphicsDevice.Clear(Color.Transparent);
-            spriteBatch.Begin(SpriteSortMode.Deferred,
-                              null,
-                              null,
-                              null,
-                              null,
-                              Content.Load<Effect>("Effects/UI.GlowingEffect"),
-                              null);
-            spriteBatch.Draw(reg, Vector2.Zero, Color.White);
-            spriteBatch.End();
-
-            // Drop the render target
-            graphicsDevice.SetRenderTarget(null);
-
-            UIApearance.TextBoxHovered = UIApearance.TextBoxPressed = glowTextBox;
+            _textBoxApearance.Reg = Content.Load<Texture2D>("UI/sprites/TextBoxReg");
+            _textBoxApearance.MouseHover = _textBoxApearance.MouseHover = _textBoxApearance.Reg.GlowingTexture(this);
+            _textBoxApearance.NotEnable = _textBoxApearance.Reg.DarkingTexture(this);
+            _textBoxApearance.Font = _buttonApearance.Font;
         }
 
         private void InitMainMenu()
@@ -332,12 +323,12 @@ namespace OZ.MonoGame.MathFun
             Point point = Mouse.GetState().Position;
 
 
-            SpriteBatch.DrawString(ScoreBar.Font,
+            SpriteBatch.DrawString(_buttonApearance.Font,
                                     point.X + "," + point.Y,
                                     Vector2.Zero,
                                     Color.Blue);
 
-            SpriteBatch.DrawString(ScoreBar.Font,
+            SpriteBatch.DrawString(_buttonApearance.Font,
                         point.X + "," + point.Y,
                         Vector2.Zero,
                         Color.Blue);

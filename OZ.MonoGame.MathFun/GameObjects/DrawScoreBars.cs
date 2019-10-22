@@ -14,6 +14,8 @@ namespace OZ.MonoGame.MathFun.GameObjects
 {
     public class DrawScoreBars : Control, IGameObject
     {
+        private ControlApearance _scoreBarApearance;
+
         public ScoreBar Player1ScoreBar { get; private set; }
         public ScoreBar Player2ScoreBar { get; private set; }
 
@@ -24,15 +26,18 @@ namespace OZ.MonoGame.MathFun.GameObjects
         public DrawScoreBars(GamePrototype gameParent) : base(gameParent)
         {
             BkgTransparent = true;
+            _scoreBarApearance = new ControlApearance();
 
             Player1ScoreBar = new ScoreBar(gameParent)
             {
-                IsLeft = true
+                IsLeft = true,
+                ControlApearance = _scoreBarApearance
             }; 
             Player2ScoreBar = new ScoreBar(gameParent)
             {
                 IsLeft = false,
-                SpriteEffect = SpriteEffects.FlipHorizontally
+                SpriteEffect = SpriteEffects.FlipHorizontally,
+                ControlApearance = _scoreBarApearance
             };
 
 
@@ -47,7 +52,7 @@ namespace OZ.MonoGame.MathFun.GameObjects
 
         private void CalculateLocationAndSize()
         {
-            Texture2D scoreBarTexture = UI.UIApearance.ScoreBar;
+            Texture2D scoreBarTexture = ScoreBar.Reg;
 
             //size
             float scale = 1;
@@ -69,8 +74,10 @@ namespace OZ.MonoGame.MathFun.GameObjects
 
         public override void LoadContent(ContentManager content)
         {
-            UI.UIApearance.ScoreBar = content.Load<Texture2D>("sprites/leftPlayer");
-            UI.UIApearance.GlowScoreBar = content.Load<Texture2D>("sprites/leftPlayerGlow");
+            ScoreBar.Reg = content.Load<Texture2D>("sprites/leftPlayer");
+            ScoreBar.Glow = content.Load<Texture2D>("sprites/leftPlayerGlow");
+            _scoreBarApearance.Font = content.Load<SpriteFont>("fonts/playerFont");
+
             base.LoadContent(content);
             CalculateLocationAndSize();
         }

@@ -83,7 +83,7 @@ namespace OZ.MonoGame.MathFun.Games
                 {
                     X = graphics.PreferredBackBufferWidth,
                     Y = graphics.PreferredBackBufferHeight * (1 - BOARD_PART_OF_WINDOW) - margin * 2
-                }
+                },
             };
 
             _winnerMessage = new WinnerMessage()
@@ -176,7 +176,7 @@ namespace OZ.MonoGame.MathFun.Games
         {
             _cardsCollection.LoadContent(Parent.Content);
 
-            _winnerMessage.Font = ScoreBar.Font = content.Load<SpriteFont>("fonts/playerFont");
+            _winnerMessage.Font = content.Load<SpriteFont>("fonts/playerFont");
 
             _drawScoreBars.LoadContent(content);
 

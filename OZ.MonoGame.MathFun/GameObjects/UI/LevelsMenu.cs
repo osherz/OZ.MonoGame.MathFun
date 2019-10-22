@@ -60,7 +60,8 @@ namespace OZ.MonoGame.MathFun.GameObjects.UI
                     Text = "Level " + (i + 1),
                     IsEnabled = true,
                     Tag = i+1,
-                    GameParent = GameParent
+                    GameParent = GameParent,
+                    ControlApearance = ButtonsApearance
                 };
                 RegisterEvent(_buttons[i]);
 
@@ -71,7 +72,8 @@ namespace OZ.MonoGame.MathFun.GameObjects.UI
             {
                 Text = "Back",
                 IsEnabled = true,
-                GameParent = GameParent
+                GameParent = GameParent,
+                ControlApearance = ButtonsApearance
             };
             Add(_backBtn);
 

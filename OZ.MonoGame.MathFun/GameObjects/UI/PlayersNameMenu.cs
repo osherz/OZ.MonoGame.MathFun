@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework.Content;
+using OZ.MonoGame.GameObjects.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,8 @@ namespace OZ.MonoGame.MathFun.GameObjects.UI
         GameTextBox[] _playersTextBox;
         MenuButton _start;
         MenuButton _backBtn;
+
+        public ControlApearance TextBoxApearance { get; set; }
 
         public event EventHandler StartClicked { add => _start.Clicked += value;remove => _start.Clicked -= value; }
         public event EventHandler BackClicked { add => _backBtn.Clicked += value; remove => _backBtn.Clicked -= value; }
@@ -45,7 +48,8 @@ namespace OZ.MonoGame.MathFun.GameObjects.UI
                     IsEnabled = true,
                     Tag = "player" + (i + 1),
                     GameParent = GameParent,
-                    BkgTransparent = false
+                    BkgTransparent = false,
+                    ControlApearance = TextBoxApearance
                 };
 
                 Add(_playersTextBox[i]);
@@ -56,6 +60,7 @@ namespace OZ.MonoGame.MathFun.GameObjects.UI
                 Text = "Start",
                 IsEnabled = true,
                 GameParent = GameParent,
+                ControlApearance = ButtonsApearance
             };
 
             _backBtn = new MenuButton(GameParent)
@@ -63,6 +68,7 @@ namespace OZ.MonoGame.MathFun.GameObjects.UI
                 Text = "Back",
                 IsEnabled = true,
                 GameParent = GameParent,
+                ControlApearance = ButtonsApearance
             };
             AddRange(_start,_backBtn);
 
