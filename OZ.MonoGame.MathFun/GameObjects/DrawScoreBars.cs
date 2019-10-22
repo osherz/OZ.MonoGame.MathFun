@@ -23,7 +23,6 @@ namespace OZ.MonoGame.MathFun.GameObjects
 
         public DrawScoreBars(GamePrototype gameParent) : base(gameParent)
         {
-            BlackTextureWhenNotEnabled = false;
             BkgTransparent = true;
 
             Player1ScoreBar = new ScoreBar(gameParent)

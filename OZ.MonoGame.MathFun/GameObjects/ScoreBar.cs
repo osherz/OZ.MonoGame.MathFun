@@ -94,7 +94,6 @@ namespace OZ.MonoGame.MathFun.GameObjects
 
         public ScoreBar(GamePrototype gameParent) : base(gameParent)
         {
-            BlackTextureWhenNotEnabled = false;
 
             _playerNameLabel = new Label(gameParent)
             {

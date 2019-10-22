@@ -97,7 +97,6 @@ namespace OZ.MonoGame.MathFun.GameObjects
         {
             IsEnabled = false;
             IsVisible = false;
-            BlackTextureWhenNotEnabled = false;
             RectangleOfContentAfterResizeing = false;
 
         }
@@ -120,7 +119,6 @@ namespace OZ.MonoGame.MathFun.GameObjects
 
             IsEnabled = false;
             IsVisible = false;
-            BlackTextureWhenNotEnabled = false;
             RectangleOfContentAfterResizeing = false;
 
         }

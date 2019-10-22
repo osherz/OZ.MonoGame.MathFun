@@ -21,7 +21,6 @@ namespace OZ.MonoGame.MathFun.GameObjects.UI
             RectangleOfContentDrawing = new Rectangle(100, 155, 350, 475);
             RectangleOfContentAfterResizeing = false;
             BkgColor = Color.White;
-            BlackTextureWhenNotEnabled = false;
         }
 
         public override void LoadContent(ContentManager content)

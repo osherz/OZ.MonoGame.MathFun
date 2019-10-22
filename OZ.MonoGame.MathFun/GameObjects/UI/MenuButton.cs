@@ -15,7 +15,6 @@ namespace OZ.MonoGame.MathFun.GameObjects.UI
         {
             Size = new Vector2(200, 50)*1.6f;
             BkgTransparent = false;
-            BlackTextureWhenNotEnabled = true;
         }
 
         public override void LoadContent(ContentManager content)

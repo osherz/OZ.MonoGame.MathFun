@@ -44,7 +44,6 @@ namespace OZ.MonoGame.MathFun.GameObjects
         public CardDraw(GamePrototype gameParent) : base(gameParent)
         {
             BkgTransparent = false;
-            BlackTextureWhenNotEnabled = false;
             IsEnabled = true;
             IsVisible = true;
             ForeColor = Color.Black;
