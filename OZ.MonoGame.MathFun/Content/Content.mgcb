@@ -171,6 +171,18 @@
 /processorParam:TextureFormat=Color
 /build:UI/sprites/pressedBtn.png
 
+#begin UI/sprites/slice_Button_06.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:UI/sprites/slice_Button_06.png;UI/sprites/pauseBtn.png
+
 #begin UI/sprites/slice_Button_23.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -182,6 +194,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:UI/sprites/slice_Button_23.png;UI/sprites/regBtn.png
+
+#begin UI/sprites/slice_Button_30.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:UI/sprites/slice_Button_30.png;UI/sprites/hoverPauseBtn.png
+
+#begin UI/sprites/slice_Button_52.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:UI/sprites/slice_Button_52.png;UI/sprites/clickedPauseBtn.png
 
 #begin UI/sprites/TextBoxReg.png
 /importer:TextureImporter

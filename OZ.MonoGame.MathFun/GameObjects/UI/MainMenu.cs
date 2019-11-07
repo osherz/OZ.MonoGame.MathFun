@@ -60,7 +60,6 @@ namespace OZ.MonoGame.MathFun.GameObjects.UI
             {
                 Text = "Memory Game",
                 IsEnabled = true,
-                GameParent = GameParent,
                 ControlApearance = ButtonsApearance
             };
 
@@ -68,7 +67,6 @@ namespace OZ.MonoGame.MathFun.GameObjects.UI
             {
                 Text = "Exit",
                 IsEnabled = true,
-                GameParent = GameParent,
                 ControlApearance = ButtonsApearance
             };
 

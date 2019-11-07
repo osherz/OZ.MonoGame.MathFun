@@ -41,6 +41,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\ScoreLabel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\UI\GameMenu.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\UI\GameTextBox.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\UI\InPausingMenu.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\UI\LevelsMenu.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\UI\MainMenu.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\UI\MenuButton.cs" />

@@ -30,6 +30,9 @@ namespace OZ.MonoGame.MathFun
         MainMenu _mainMenu;
         LevelsMenu _chooseLevel;
         PlayersNameMenu _playersNameMenu;
+        InPausingMenu _inPausingMenu;
+        
+        Button _pause;
 
         ControlApearance _buttonApearance;
         ControlApearance _textBoxApearance;
@@ -38,7 +41,7 @@ namespace OZ.MonoGame.MathFun
         Stack<GameMenu> _menuesStack;
 
         public SpriteFont Font { get; private set; }
-        public Vector2 Size => new Vector2(Graphics.PreferredBackBufferWidth, Graphics.PreferredBackBufferHeight);
+        public Vector2 SizeVector => Size.ToVector2();
         public Game(int width = 0, int height = 0)
         {
             SuspendLayout();
@@ -101,7 +104,15 @@ namespace OZ.MonoGame.MathFun
                 TextBoxApearance = _textBoxApearance
             };
 
-            Controls.AddRange(new GameMenu[] { _mainMenu, _chooseLevel, _playersNameMenu });
+            _inPausingMenu = new InPausingMenu(this)
+            {
+                IsEnabled = false,
+                IsVisible = false,
+                ControlApearance = _menuApearance,
+                ButtonsApearance = _buttonApearance
+            };
+
+            Controls.AddRange(new GameMenu[] { _mainMenu, _chooseLevel, _playersNameMenu,_inPausingMenu });
 
         }
 
@@ -130,10 +141,49 @@ namespace OZ.MonoGame.MathFun
             base.LoadContent();
 
             _memoryGameControl.LoadContent(Content);
+            _pause = new Button(this)
+            {
+                Text = "",
+                IsEnabled = false,
+                IsVisible = false,
+                Size = Vector2.One * 50,
+                Location = SizeVector - Vector2.One * 50,
+                RegTexture = Content.Load<Texture2D>("UI/sprites/pauseBtn"),
+                HoverTexture = Content.Load<Texture2D>("UI/sprites/hoverPauseBtn"),
+                PressedTexture = Content.Load<Texture2D>("UI/sprites/clickedPauseBtn")
+            };
+            _pause.Clicked += Pause_Clicked;
+            Controls.Add(_pause);
+
             InitMainMenu();
             InitLevels();
             InitPlayersNameMenu();
+            InitInPausingMenu();
             ResumeLayout();
+        }
+
+        private void Pause_Clicked(object sender, EventArgs e)
+        {
+            if(_inPausingMenu.IsVisible)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
+        }
+
+        private void Pause()
+        {
+            _inPausingMenu.IsVisible = _inPausingMenu.IsEnabled = true;
+            _memoryGameControl.Pause();
+        }
+
+        private void Resume()
+        {
+            _inPausingMenu.IsVisible = _inPausingMenu.IsEnabled = false;
+            _memoryGameControl.Continue();
         }
 
         private void LoadUIThings()
@@ -202,6 +252,25 @@ namespace OZ.MonoGame.MathFun
 
         }
 
+        private void InitInPausingMenu()
+        {
+            _inPausingMenu.ToMiddle();
+
+            _inPausingMenu.ResumeBtnClicked += (sender, e) => Resume();
+            _inPausingMenu.MainMenuBtnClicked += (sender, e) =>
+                  {
+                      while (_menuesStack.Count() > 1)
+                      {
+                          ToOldMenu();
+                      }
+                  };
+            _inPausingMenu.ExitBtnClicked += (sender, e) =>
+            {
+                Exit();
+            };
+            _menuesStack.Push(_mainMenu);
+        }
+
         //Start animation that replace the current menu with the next.
         private void ToNextMenu(GameMenu nextGameMenu)
         {
@@ -209,7 +278,7 @@ namespace OZ.MonoGame.MathFun
             ReplaceMenus animate = new ReplaceMenus(oldGameMenu, nextGameMenu)
             {
                 TimeToReach = PANEL_TIME_TO_LEAVE,
-                WindowSize = Size,
+                WindowSize = SizeVector,
                 AnimateDirection = Direction.Up
             };
             animate.ActionInEnd += () =>
@@ -241,6 +310,8 @@ namespace OZ.MonoGame.MathFun
 
                 _memoryGameControl.AssignPlayersName(_playersNameMenu[0], _playersNameMenu[1]);
                 _memoryGameControl.StartNewGame(_level);
+                _pause.IsVisible = true;
+                _pause.IsEnabled = true;
                 Animations.Remove(removeMenuAnimation);
             };
 
@@ -257,7 +328,7 @@ namespace OZ.MonoGame.MathFun
             ReplaceMenus animate = new ReplaceMenus(currentGameMenu, oldGameMenu)
             {
                 TimeToReach = PANEL_TIME_TO_LEAVE,
-                WindowSize = Size,
+                WindowSize = SizeVector,
                 AnimateDirection = Direction.Down
             };
             animate.ActionInEnd += () =>
