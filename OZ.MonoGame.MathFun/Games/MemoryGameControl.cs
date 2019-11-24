@@ -136,6 +136,11 @@ namespace OZ.MonoGame.MathFun.Games
             _gameEngine.StartNewGame();
         }
 
+        public void End()
+        {
+            _gameEngine.End();
+        }
+
         public void AssignPlayersName(string player1, string player2)
         {
             _player1.Name = player1;

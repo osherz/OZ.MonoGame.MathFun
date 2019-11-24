@@ -111,6 +111,7 @@ namespace OZ.MonoGame.MathFun.GameObjects
 
         public void Reset(int rows, int columns, Engine<CardDraw> engine)
         {
+            Controls.Clear();
             if (!(Engine is null))
             {
                 Engine.GameStarted -= Engine_GameStarted;

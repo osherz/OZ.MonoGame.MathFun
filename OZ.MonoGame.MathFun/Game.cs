@@ -31,7 +31,7 @@ namespace OZ.MonoGame.MathFun
         LevelsMenu _chooseLevel;
         PlayersNameMenu _playersNameMenu;
         InPausingMenu _inPausingMenu;
-        
+
         Button _pause;
 
         ControlApearance _buttonApearance;
@@ -112,7 +112,7 @@ namespace OZ.MonoGame.MathFun
                 ButtonsApearance = _buttonApearance
             };
 
-            Controls.AddRange(new GameMenu[] { _mainMenu, _chooseLevel, _playersNameMenu,_inPausingMenu });
+            Controls.AddRange(new GameMenu[] { _mainMenu, _chooseLevel, _playersNameMenu, _inPausingMenu });
 
         }
 
@@ -164,7 +164,7 @@ namespace OZ.MonoGame.MathFun
 
         private void Pause_Clicked(object sender, EventArgs e)
         {
-            if(_inPausingMenu.IsVisible)
+            if (_inPausingMenu.IsVisible)
             {
                 Resume();
             }
@@ -257,18 +257,25 @@ namespace OZ.MonoGame.MathFun
             _inPausingMenu.ToMiddle();
 
             _inPausingMenu.ResumeBtnClicked += (sender, e) => Resume();
-            _inPausingMenu.MainMenuBtnClicked += (sender, e) =>
-                  {
-                      while (_menuesStack.Count() > 1)
-                      {
-                          ToOldMenu();
-                      }
-                  };
+            _inPausingMenu.LevelsBtnClicked += (sender, e) =>
+            {
+                _inPausingMenu.IsVisible = _inPausingMenu.IsEnabled = false;
+                _memoryGameControl.End();
+                ToOldMenu();
+            };
             _inPausingMenu.ExitBtnClicked += (sender, e) =>
             {
                 Exit();
             };
             _menuesStack.Push(_mainMenu);
+        }
+
+        private void BackToMainMenu()
+        {
+            if (_menuesStack.Count > 1)
+            {
+                ToOldMenu(BackToMainMenu);
+            }
         }
 
         //Start animation that replace the current menu with the next.
@@ -321,7 +328,7 @@ namespace OZ.MonoGame.MathFun
         }
 
         //Start animation that replace the current menu with the old one.
-        private void ToOldMenu()
+        private void ToOldMenu(Action doInEnd = null)
         {
             GameMenu currentGameMenu = _menuesStack.Pop();
             GameMenu oldGameMenu = _menuesStack.Peek();
@@ -334,6 +341,7 @@ namespace OZ.MonoGame.MathFun
             animate.ActionInEnd += () =>
             {
                 Animations.Remove(animate);
+                doInEnd?.Invoke();
             };
 
             Animations.Add(animate);

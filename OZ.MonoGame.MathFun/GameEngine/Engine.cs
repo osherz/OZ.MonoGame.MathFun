@@ -110,6 +110,12 @@ namespace OZ.MonoGame.MathFun.GameEngine
             IsGameStarted = true;
         }
 
+        public void End()
+        {
+            ResetPlayersScore();
+            _isGameStarted = false;
+        }
+
         public void InitBoard(int rows, int columns)
         {
             if ((rows * columns) % 2 == 1)

@@ -10,10 +10,10 @@ namespace OZ.MonoGame.MathFun.GameObjects.UI
         private MenuButton _resumeBtn;
         private MenuButton _mainMenuBtn;
         private MenuButton _exitBtn;
-
+        
         #region Events
         public event EventHandler ResumeBtnClicked { add => _resumeBtn.Clicked += value; remove => _resumeBtn.Clicked -= value; }
-        public event EventHandler MainMenuBtnClicked { add => _mainMenuBtn.Clicked += value; remove => _mainMenuBtn.Clicked -= value; }
+        public event EventHandler LevelsBtnClicked { add => _mainMenuBtn.Clicked += value; remove => _mainMenuBtn.Clicked -= value; }
         public event EventHandler ExitBtnClicked { add => _exitBtn.Clicked += value; remove => _exitBtn.Clicked -= value; }
         #endregion Events
 
@@ -32,7 +32,7 @@ namespace OZ.MonoGame.MathFun.GameObjects.UI
         private void InitButtons()
         {
             _resumeBtn = new MenuButton(GameParent) { Text = "Resume" };
-            _mainMenuBtn = new MenuButton(GameParent) { Text = "MainMenu" };
+            _mainMenuBtn = new MenuButton(GameParent) { Text = "Levels" };
             _exitBtn = new MenuButton(GameParent) { Text = "Exit" };
 
             foreach (var btn in new[] { _resumeBtn, _mainMenuBtn, _exitBtn })
